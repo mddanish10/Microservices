@@ -8,7 +8,7 @@ public class HelloWorld {
 
     @GetMapping("/hello")
     public String hello(){
-        return "Hello  in Microservices";
+        return "Hello worls in Microservices";
     }
 
 }
