@@ -224,9 +224,10 @@ public class AccountsController {
     )
     @GetMapping("/java-version")
     public ResponseEntity<String> getJavaVersion(){
+
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .body("JAVA_HOME");
+                .body(environment.getProperty("JAVA_HOME"));
 
     }
 }
