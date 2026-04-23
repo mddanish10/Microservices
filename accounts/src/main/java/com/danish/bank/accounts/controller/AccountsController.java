@@ -1,10 +1,7 @@
 package com.danish.bank.accounts.controller;
 
 import com.danish.bank.accounts.constants.AccountsConstants;
-import com.danish.bank.accounts.dto.AccountsDto;
-import com.danish.bank.accounts.dto.CustomerDto;
-import com.danish.bank.accounts.dto.ErrorResponseDto;
-import com.danish.bank.accounts.dto.ResponseDto;
+import com.danish.bank.accounts.dto.*;
 import com.danish.bank.accounts.service.IAccountsService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -40,6 +37,9 @@ public class AccountsController {
 
     @Autowired
     private Environment environment;
+
+    @Autowired
+    private AccountContactInfoDto accountContactInfoDto;
 
     public AccountsController(IAccountsService iAccountsService) {
         this.iAccountsService = iAccountsService;
@@ -228,6 +228,33 @@ public class AccountsController {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(environment.getProperty("JAVA_HOME"));
+
+    }
+
+    @Operation(
+            summary = "Get method",
+            description = "This returns java version"
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "HTTP Status OK"
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "HTTP Status Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
+            )
+    }
+    )
+    @GetMapping("/contact-info")
+    public ResponseEntity<AccountContactInfoDto> getContactInfo(){
+
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(accountContactInfoDto);
 
     }
 }

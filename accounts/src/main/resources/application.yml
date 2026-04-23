@@ -19,4 +19,13 @@ spring:
 build:
   version: "1.0"
 
+accounts:
+  message: "Production support"
+  contactDetails:
+    name: "Mohammad Danish"
+    email: "Danish@gmail.com"
+  CallSupport:
+    -(+11)1234567
+    -(+22)2345432
+
 
