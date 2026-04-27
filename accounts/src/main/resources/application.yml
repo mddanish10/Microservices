@@ -19,9 +19,10 @@ spring:
     import:
      - "application_qa.yml"
      - "application_prod.yml"
-  profile:
+  profiles:
     active:
-      - "prod"
+      - "qa"
+
 
 build:
   version: "1.0"
