@@ -1,0 +1,16 @@
+spring:
+  config:
+    activate:
+      on-profile: "qa"
+
+build:
+  version: "2.0"
+
+accounts:
+  message: "Quality support"
+  contactDetails:
+    name: "Shubham Raj"
+    email: "shubham@gmail.com"
+  CallSupport:
+    -(+11)123123123
+    -(+22)321321321

@@ -1,0 +1,16 @@
+spring:
+  config:
+    activate:
+      on-profile: "prod"
+
+build:
+  version: "3.0"
+
+accounts:
+  message: "Production  support"
+  contactDetails:
+    name: "Rahul Gupta"
+    email: "rahul@gmail.com"
+  CallSupport:
+    -(+11)444555666
+    -(+22)555444666

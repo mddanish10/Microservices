@@ -15,12 +15,19 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+  config:
+    import:
+     - "application_qa.yml"
+     - "application_prod.yml"
+  profile:
+    active:
+      - "prod"
 
 build:
   version: "1.0"
 
 accounts:
-  message: "Production support"
+  message: "Development support"
   contactDetails:
     name: "Mohammad Danish"
     email: "Danish@gmail.com"
