@@ -233,7 +233,7 @@ public class AccountsController {
 
     @Operation(
             summary = "Get method",
-            description = "This returns java version"
+            description = "This returns contact details for on call person"
     )
     @ApiResponses({
             @ApiResponse(

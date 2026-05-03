@@ -2,6 +2,7 @@ package com.danish.bank.loans.controller;
 
 import com.danish.bank.loans.constants.LoansConstants;
 import com.danish.bank.loans.dto.ErrorResponseDto;
+import com.danish.bank.loans.dto.LoansContactInfoDto;
 import com.danish.bank.loans.dto.LoansDto;
 import com.danish.bank.loans.dto.ResponseDto;
 import com.danish.bank.loans.service.ILoansService;
@@ -38,6 +39,9 @@ public class LoansController {
 
     @Value("${build.version}")
     private String buildVersion;
+
+    @Autowired
+    private LoansContactInfoDto loansContactInfoDto;
 
 
     public LoansController(ILoansService iLoansService) {
@@ -220,6 +224,30 @@ public class LoansController {
     public  ResponseEntity<String> getJavaVersion(){
         return ResponseEntity.status(HttpStatus.OK)
                 .body(environment.getProperty("JAVA_HOME"));
+    }
+
+    @Operation(
+            summary = "get Method",
+            description = "Using Configuration Properties"
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "HTTP Status OK"
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "HTTP Status Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
+            )
+    }
+    )
+    @GetMapping("/contact-info")
+    public  ResponseEntity<LoansContactInfoDto> getContactInfo(){
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(loansContactInfoDto);
     }
 
 }

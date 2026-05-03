@@ -18,5 +18,12 @@ spring:
 build:
   version: "21.0"
 
-
+loans:
+  message: "Development support for Loans department"
+  contactDetails:
+    name: "Mohammad Danish"
+    email: "Danish@gmail.com"
+  CallSupport:
+    -(+11)1234567
+    -(+22)2345432
 
