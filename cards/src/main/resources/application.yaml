@@ -17,3 +17,11 @@ spring:
 build:
   version: "11.0"
 
+cards:
+  message: "Development support for Cards department"
+  contactDetails:
+    name: "Mohammad Danish"
+    email: "Danish@gmail.com"
+  CallSupport:
+    -(+11)1234567
+    -(+22)2345432

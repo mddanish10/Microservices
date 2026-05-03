@@ -1,6 +1,7 @@
 package com.danish.bank.cards.controller;
 
 import com.danish.bank.cards.constants.CardsConstants;
+import com.danish.bank.cards.dto.CardsContactInfoDto;
 import com.danish.bank.cards.dto.CardsDto;
 import com.danish.bank.cards.dto.ErrorResponseDto;
 import com.danish.bank.cards.dto.ResponseDto;
@@ -43,6 +44,8 @@ public class CardsController {
     private Environment environment;
 
     private ICardsService iCardsService;
+    @Autowired
+    private CardsContactInfoDto cardsContactInfoDto;
 
     public CardsController(ICardsService iCardsService) {
         this.iCardsService = iCardsService;
@@ -216,6 +219,30 @@ public class CardsController {
     public ResponseEntity<String> getJavaInfo(){
         return  ResponseEntity.status(HttpStatus.OK)
                 .body(environment.getProperty("JAVA_HOME"));
+    }
+
+    @Operation(
+            summary = "get Meothod",
+            description = "Cards Java version method"
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "HTTP Status OK"
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "HTTP Status Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
+            )
+    })
+    @GetMapping("/contact-info")
+    public ResponseEntity<CardsContactInfoDto> getContactInfo(){
+
+        return  ResponseEntity.status(HttpStatus.OK)
+                .body(cardsContactInfoDto);
     }
 
 }
