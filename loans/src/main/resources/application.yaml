@@ -15,6 +15,13 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+  config:
+    import:
+      - "application_qa.yaml"
+      - "application_prod.yaml"
+  profiles:
+    active:
+      - "qa"
 build:
   version: "21.0"
 
@@ -26,4 +33,5 @@ loans:
   CallSupport:
     -(+11)1234567
     -(+22)2345432
+
 
