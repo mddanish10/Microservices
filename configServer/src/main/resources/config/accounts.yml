@@ -1,0 +1,14 @@
+
+build:
+  version: "1.0"
+
+accounts:
+  message: "Development support"
+  contactDetails:
+    name: "Mohammad Danish"
+    email: "Danish@gmail.com"
+  CallSupport:
+    -(+11)1234567
+    -(+22)2345432
+
+

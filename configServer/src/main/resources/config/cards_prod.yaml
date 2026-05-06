@@ -1,0 +1,15 @@
+spring:
+  config:
+    activate:
+      on-profile: "prod"
+build:
+  version: "11.2"
+
+loans:
+  message: "prod support for Loans department"
+  contactDetails:
+    name: "Mohammad Danish"
+    email: "Danish@gmail.com"
+  CallSupport:
+    -(+11)1234567
+    -(+22)2345432
