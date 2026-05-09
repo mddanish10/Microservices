@@ -2,12 +2,17 @@ spring:
   application:
     name: configServer
   profiles:
-    active: native
+    active: git
 
   cloud:
     config:
       server:
-        native:
-          search-locations: "classpath:/config"
+        git:
+          uri: "https://github.com/mddanish10/microservices-configuration.git"
+
+
+#        native:
+#          search-locations: "classpath:/config"
+
 server:
   port: 8071
