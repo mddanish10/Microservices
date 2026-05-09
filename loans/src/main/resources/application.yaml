@@ -2,7 +2,9 @@ server:
   port: 8090
 spring:
   application:
-    name: loans
+    name: "loans"
+  profiles:
+    active: "prod"
   datasource:
     url: jdbc:h2:mem:testdb
     driverClassName: org.h2.Driver
@@ -16,22 +18,5 @@ spring:
       ddl-auto: update
     show-sql: true
   config:
-    import:
-      - "cards_qa.yaml"
-      - "cards_prod.yaml"
-  profiles:
-    active:
-      - "qa"
-build:
-  version: "21.0"
-
-loans:
-  message: "Development support for Loans department"
-  contactDetails:
-    name: "Mohammad Danish"
-    email: "Danish@gmail.com"
-  CallSupport:
-    -(+11)1234567
-    -(+22)2345432
-
+    import: "optional:configserver:http://localhost:8071"
 
