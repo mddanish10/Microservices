@@ -9,7 +9,12 @@ spring:
       server:
         git:
           uri: "https://github.com/mddanish10/microservices-configuration.git"
-
+          default-label: main
+          timeout: 4
+          clone-on-start: true
+          force-pull: true
+encrypt:
+   key: "a1293dkb13bidq9h24942429"
 
 #        native:
 #          search-locations: "classpath:/config"
