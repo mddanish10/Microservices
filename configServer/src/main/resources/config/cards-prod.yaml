@@ -3,7 +3,7 @@ build:
   version: "11.2"
 
 loans:
-  message: "prod support for Loans department"
+  message: "prod support cloudbus for Loans department"
   contactDetails:
     name: "Mohammad Danish"
     email: "Danish@gmail.com"
