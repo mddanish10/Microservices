@@ -3,7 +3,7 @@ build:
   version: "3.0"
 
 accounts:
-  message: "Production cloudbus support"
+  message: "Production cloudbus in support"
   contactDetails:
     name: "Rahul Gupta"
     email: "rahul@gmail.com"
