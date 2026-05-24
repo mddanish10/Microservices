@@ -3,7 +3,7 @@ build:
   version: "3.0"
 
 accounts:
-  message: "Production cloudbus in support"
+  message: "Production cloudbus in support webhook"
   contactDetails:
     name: "Rahul Gupta"
     email: "rahul@gmail.com"
